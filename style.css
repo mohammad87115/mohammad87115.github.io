@@ -1,6 +1,16 @@
 body,
 html {
-    height: 100%
+    transition: all 0.5s;
+    height: 100%;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  
+}
+
+body::-webkit-scrollbar {
+    display: none;
+
 }
 
 #particles-js canvas {
@@ -32,12 +42,106 @@ html {
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.281);
     border: #2c2e43;
+    transition: all 0.5s;
+
 }
 
 .glass-div {
     display: inline-block;
     padding: 15px 15px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.281);
+    background-color: rgba(255, 255, 255, 0.364);
+    border: #2c2e43;
+    transition: all 0.5s;
+
+}
+
+.glass-button:hover {
+    display: inline-block;
+    padding: 15px 15px;
+    width: 60px;
+    border-radius: 5px;
+    background-color: #9ba0d8a9;
+    border: #2f314f;
+}
+
+.sidebtn {
+    transition: all 0.5s;
+    display: inline-block;
+    padding: 15px 15px;
+    height: 50px;
+    width: 50px;
+    border-radius: 1000px;
+    background-color: rgba(255, 255, 255, 0.478);
     border: #2c2e43;
 }
+
+.sidebtn:hover {
+    display: inline-block;
+    padding: 15px 15px;
+    border-radius: 1000px;
+    background-color: rgba(255, 255, 255, 0.615);
+    border: #2c2e43;
+}
+.sidebtn.hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0; padding: 0; margin: 0; width: 0; /* optional */
+  }
+  
+.fa-solid {
+    transition: all 0.5s;
+}
+.fa-bars {
+    transition: all 0.5s;
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.709); /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000000b1;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: rgb(0, 0, 0);
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  

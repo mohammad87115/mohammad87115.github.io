@@ -120,7 +120,7 @@ var i = 0;
 var txt = " SextyNine"
 
 var i2 = 0;
-var txt2 = "A random guy you may see on the internet ..."
+var txt2 = "A random guy you may meet on the internet ..."
 
 
 
@@ -159,3 +159,19 @@ function toast() {
     })
     toastList.forEach(toast => toast.show())
   }
+
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("sexab").className = "sidebtn hide position-fixed end-0 mx-3 my-3"
+
+  }
+  
+  /* Set the width of the side navigation to 0 */
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("sexab").className = "sidebtn fa-solid fa-bars position-fixed end-0 mx-3 my-3"
+  }
+  
+setTimeout(async () => {
+    document.getElementById("abjagh").className = "toast position-fixed end-0 bottom-0 mx-3 my-3"
+}, 60000)
