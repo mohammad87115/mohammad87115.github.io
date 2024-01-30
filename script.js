@@ -160,18 +160,43 @@ function toast() {
     toastList.forEach(toast => toast.show())
   }
 
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("sexab").className = "sidebtn hide position-fixed end-0 mx-3 my-3"
-
-  }
   
-  /* Set the width of the side navigation to 0 */
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("sexab").className = "sidebtn fa-solid fa-bars position-fixed end-0 mx-3 my-3"
-  }
   
 setTimeout(async () => {
     document.getElementById("abjagh").className = "toast position-fixed end-0 bottom-0 mx-3 my-3"
 }, 60000)
+
+var captchatoken = "dds"
+
+function onSubmit(token) {
+    captchatoken = token
+}
+
+async function submit() {
+    const mail = document.getElementById("email").value
+    const name = document.getElementById("name").value
+    const message = document.getElementById("message").value
+    const captcha = captchatoken
+    if (!mail || !name || !message) {
+        document.getElementById("alert").style.display = "flex"
+        document.getElementById("alert-err").innerHTML = "  Make sure to fill all the values"
+        return;
+    }
+    if (!captcha) {
+        document.getElementById("alert").style.display = "flex"
+        document.getElementById("alert-err").innerHTML = "  Make sure to solve the captcha"
+        return;
+    }
+    const rawResponse = await fetch('https://contactform-api-sex.onrender.com/sendmsg', {
+        method: 'POST',
+        body: JSON.stringify({"message":message, "email":mail, "name":name, "captcha": captcha})
+    });
+    const content = await rawResponse.json();
+        if (content.status !== "ok") {
+            document.getElementById("alert").style.display = "flex"
+            document.getElementById("alert-err").innerHTML = "  There was an error while sending the message"
+        } else {
+            document.getElementById("alert").style.display = "none"
+        }
+
+}
