@@ -187,7 +187,7 @@ async function submit() {
         document.getElementById("alert-err").innerHTML = "  Make sure to solve the captcha"
         return;
     }
-    const rawResponse = await fetch('https://contactform-api-sex.onrender.com/sendmsg', {
+    const rawResponse = await fetch('http://node.aerocloud.tech:25567/sendmsg', {
         method: 'POST',
         body: JSON.stringify({"message":message, "email":mail, "name":name, "captcha": captcha})
     });
