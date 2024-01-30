@@ -189,6 +189,7 @@ async function submit() {
     }
     const rawResponse = await fetch('http://node.aerocloud.tech:25567/sendmsg', {
         method: 'POST',
+        headers: new Headers({'content-type': 'application/json'}),
         body: JSON.stringify({"message":message, "email":mail, "name":name, "captcha": captcha})
     });
     const content = await rawResponse.json();
