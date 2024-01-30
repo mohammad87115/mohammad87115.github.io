@@ -166,7 +166,7 @@ setTimeout(async () => {
     document.getElementById("abjagh").className = "toast position-fixed end-0 bottom-0 mx-3 my-3"
 }, 60000)
 
-var captchatoken = " "
+var captchatoken = ""
 
 function onSubmit(token) {
     captchatoken = token
