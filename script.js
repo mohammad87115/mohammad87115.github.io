@@ -166,7 +166,7 @@ setTimeout(async () => {
     document.getElementById("abjagh").className = "toast position-fixed end-0 bottom-0 mx-3 my-3"
 }, 60000)
 
-var captchatoken = "dds"
+var captchatoken = " "
 
 function onSubmit(token) {
     captchatoken = token
@@ -187,17 +187,13 @@ async function submit() {
         document.getElementById("alert-err").innerHTML = "  Make sure to solve the captcha"
         return;
     }
-    const rawResponse = await fetch('http://node.aerocloud.tech:25567/sendmsg', {
-        method: 'POST',
-        headers: new Headers({'content-type': 'application/json'}),
-        body: JSON.stringify({"message":message, "email":mail, "name":name, "captcha": captcha})
-    });
-    const content = await rawResponse.json();
-        if (content.status !== "ok") {
-            document.getElementById("alert").style.display = "flex"
-            document.getElementById("alert-err").innerHTML = "  There was an error while sending the message"
-        } else {
-            document.getElementById("alert").style.display = "none"
+    const rawResponse = await axios.post('https://contactform-api-sex.onrender.com/sendmsg', {"message":message, "email":mail, "name":name, "captcha": captcha}, { headers: {'Content-Type': 'application/json'}});
+    const content = rawResponse.data
+    if (content.status !== "ok") {
+        document.getElementById("alert").style.display = "flex"
+        document.getElementById("alert-err").innerHTML = "  There was an error while sending the message"
+    } else {
+        document.getElementById("alert").style.display = "none"
         }
 
 }
