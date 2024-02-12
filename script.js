@@ -1,3 +1,5 @@
+
+
 config = {
     "particles": {
       "number": {
@@ -113,7 +115,7 @@ setTimeout(async () => {
     particlesJS('particles-js', config, function() {
         console.log('[callback] - particles.js config loaded');
     });
-
+                  
 }, 10)
 
 var i = 0;
@@ -166,43 +168,3 @@ setTimeout(async () => {
     document.getElementById("abjagh").className = "toast position-fixed end-0 bottom-0 mx-3 my-3"
 }, 60000)
 
-// var captchatoken = ""
-
-// function onSubmit(token) {
-//     captchatoken = token
-// }
-
-// async function submit() {
-//     const mail = document.getElementById("email").value
-//     const name = document.getElementById("name").value
-//     const message = document.getElementById("message").value
-//     const captcha = captchatoken
-//     if (!mail || !name || !message) {
-//         document.getElementById("strong").innerHTML = "Error!"
-//         document.getElementById("alert").className = "alert alert-danger alert-dismissible fade show"
-//         document.getElementById("alert").style.display = "flex"
-//         document.getElementById("alert-err").innerHTML = "  Make sure to fill all the values"
-//         return;
-//     }
-//     if (!captcha) {
-//         document.getElementById("strong").innerHTML = "Error!"
-//         document.getElementById("alert").className = "alert alert-danger alert-dismissible fade show"
-//         document.getElementById("alert").style.display = "flex"
-//         document.getElementById("alert-err").innerHTML = "  Make sure to solve the captcha"
-//         return;
-//     }
-//     const rawResponse = await axios.post('https://contactform-api-sex.onrender.com/sendmsg', {"message":message, "email":mail, "name":name, "captcha": captcha}, { headers: {'Content-Type': 'application/json'}});
-//     const content = rawResponse.data
-//     if (content.status !== "ok") {
-//         document.getElementById("strong").innerHTML = "Error!"
-//         document.getElementById("alert").className = "alert alert-danger alert-dismissible fade show"
-//         document.getElementById("alert").style.display = "flex"
-//         document.getElementById("alert-err").innerHTML = "  There was an error while sending the message"
-//     } else {
-//         document.getElementById("strong").innerHTML = "Success!"
-//         document.getElementById("alert").className = "alert alert-success alert-dismissible fade show"
-//         document.getElementById("alert").style.display = "flex"
-//         document.getElementById("alert-err").innerHTML = "  Your message got submited with code " + content.data
-//     }
-
-// }
