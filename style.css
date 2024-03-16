@@ -54,7 +54,11 @@ body::-webkit-scrollbar {
     background-color: rgba(255, 255, 255, 0.364);
     border: #2c2e43;
     transition: all 0.5s;
-
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 .glass-div-2x {
     display: inline-block;
